@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
@@ -25,10 +27,27 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  final _imgPath = [
+    'images/day01.png',
+    'images/day02.png',
+    'images/day03.png',
+    'images/day04.png',
+    'images/day05.png',
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      body: SafeArea(
+        child: CarouselSlider(
+          options: CarouselOptions(autoPlay: true),
+          items: _imgPath.map((imagePath) {
+            return Container(
+              width: MediaQuery.of(context).size.width,
+                child: Image.asset(imagePath));
+          }).toList(),
+        ),
+      ),
     );
   }
 }
