@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:tic_tac_toe/tile_model.dart';
 
 class BoardTile extends StatelessWidget {
-  late double? dimension;
+  late double dimension;
+  late TileState tileState;
 
-  BoardTile({Key? key, this.dimension }) : super(key: key);
+  BoardTile({Key? key, required this.dimension,required this.tileState }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

@@ -1,5 +1,8 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:tic_tac_toe/board_tile.dart';
+import 'package:tic_tac_toe/tile_model.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,6 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  TileState tileState;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,7 +54,8 @@ class _MyHomePageState extends State<MyHomePage> {
                   Row(
                     children: [
                       BoardTile(
-                        dimension: tileDemension,
+                        dimension: tileDemension, 
+                        tileState: ,
                       ),
                       BoardTile(
                         dimension: tileDemension,
